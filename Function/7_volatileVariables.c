@@ -1,0 +1,1 @@
+int ready = 0;
