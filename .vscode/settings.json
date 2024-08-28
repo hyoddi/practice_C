@@ -2,7 +2,8 @@
     "files.associations": {
         "stackFrameExample1.C": "cpp",
         "addSquare.C": "cpp",
-        "tryStack.C": "cpp"
+        "tryStack.C": "cpp",
+        "localVariables.C": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
