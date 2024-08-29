@@ -4,7 +4,7 @@ int factorial(int n){
     if (n == 1) // 재귀 함수에서 직접 문제를 해결할 수 있을 정도로 작아진 때, 이를 베이스 케이스(Base Case) 혹은 퇴행 케이스(Degenerate Case) 라고 한다.
         return 1;
     else
-        return (n * factorial(n - 1));
+        return n * factorial(n - 1);
 }
 
 int main(){
