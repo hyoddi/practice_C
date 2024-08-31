@@ -3,7 +3,8 @@
         "stackFrameExample1.C": "cpp",
         "addSquare.C": "cpp",
         "tryStack.C": "cpp",
-        "localVariables.C": "cpp"
+        "localVariables.C": "cpp",
+        "stdio.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
