@@ -23,4 +23,6 @@ int main(){
     }
 
     printf("ANSWER: %s", arr2);
+
+    return 0;
 }
