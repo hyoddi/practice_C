@@ -5,16 +5,20 @@
 
 #include <stdio.h>
 
-void hanoi(int N, char X, char Y, char Z){
-    if (N == 1){
-        hanoi(1, X, Y, Z)
+void hanoi(int n, char x, char y, char z){ // 원반 개수, 출발지, 목적지, 경유지
+    if (n == 0) return;
+    else{
+        hanoi(n - 1, x, z, y); // 맨 아래 원반 제외 다른 원반들을 목적지가 아닌 곳으로 옮기고..(재귀)
+        printf("move a disk from %c to %c\n", x, y); // (재귀가 끝나면 마지막 하나 남겠죠) 제일 아래 원반을 목적지로 이동시키기
+        hanoi(n - 1, z, y, x); // 이후 옮겼던 원반들을 다시 원래 목적지로 이동시킨다.
     }
-
+    
 }
 
 int main(){
     int num, ans;
+    char X = 'X', Y = 'Y', Z = 'Z';
     printf("Enter the number of disks.\n");
-    num = scanf("%d", &num);
+    scanf("%d", &num);
     hanoi(num, X, Y, Z);
 }
