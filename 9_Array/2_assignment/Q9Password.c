@@ -9,4 +9,5 @@ int main(){
     scanf("%8s", arr); // 최대 8자 제한
     printf("%s", arr);
 
+    return 0;
 }

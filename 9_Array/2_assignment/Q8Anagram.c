@@ -35,4 +35,6 @@ int main(){
         }
     }
     printf("%s", arr2);
+
+    return 0;
 }

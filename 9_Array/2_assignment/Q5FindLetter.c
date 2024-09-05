@@ -30,4 +30,6 @@ int main(){
 
     printf("%s.\n", ans ? "yes" : "no");
 
+    return 0;
+
 }

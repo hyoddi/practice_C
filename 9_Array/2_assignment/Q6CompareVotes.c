@@ -25,4 +25,5 @@ int main(){
     }
     if (winner != 0) printf("Number %d is the winner.\n", winner);
     else printf("없어요.");
-}
+    
+    return 0;
