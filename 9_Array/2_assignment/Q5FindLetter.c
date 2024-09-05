@@ -4,21 +4,30 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 int main(){
-    int arr[50];
+    char arr[50];
     int i = 0;
     int sen = 1;
+    bool ans = true;
 
     printf("Enter input sentence.\n");
-    scanf("%[^\n]s", arr);
+    scanf("%[^\n]", arr);
+
+    int len = strlen(arr);
     
     while(sen){
         if (arr[i] == 'e'){
             sen = 0;
-            if (i == strlen(arr) - 1) printf("no.");
-            else printf("yes.");
         }
+        else if (i == len - 1){
+            arr[i + 1] = 'e';
+            ans = false;
+        }
+        i+=1;
     }
+
+    printf("%s.\n", ans ? "yes" : "no");
 
 }
