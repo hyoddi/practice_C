@@ -42,12 +42,16 @@ void swap(int *p, int *q){
 }
 
 void bubble_sort(int arr[], int length){
-    int pass, current; // pass는 단계를 뜻한다.
+    int pass, current, sorted = 0;
 
-    for (pass = 1; pass < length; pass++){ // 1단계부터 시작
-        for (current = 0; current < (length - pass); current++){ // 단계가 끝나면 다음 루프에선 마지막은 빼고 간다(length - pass). 단계가 끝나면 마지막엔 가장 큰 수가 들어갔을테니.
-            if (arr[current] > arr[current + 1]) // 서로 비교해서 왼쪽 게 크면
-                swap(&arr[current], &arr[current + 1]); // 둘이 스왑.
+    for (pass = 1; (pass < length) && (!sorted); pass++){ // 1단계부터 시작하는 건 똑같은데, !sorted, 전 단계에서 섞이지 않았다면 종료한다는 조건 추가.
+        sorted = 1;
+        for (current = 0; current < (length - pass); current++){
+            if (arr[current] > arr[current + 1]){
+                swap(&arr[current], &arr[current + 1]);
+                sorted = 0; // 섞였다면 다시 0으로 초기화 (다음 단계도 정렬 확인부탁드립니다.) -> 이번에 정렬 안했다면 sorted는 1로 계속 남아있어서 다음 루프는 종료되겠죠?
+            }
         }
     }
+    
 }
