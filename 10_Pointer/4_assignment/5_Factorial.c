@@ -4,21 +4,23 @@
 #include <stdio.h>
 
 void factorial(int n, int *p){
-    if (n <= 2) return 1;
-    else{
-        return factorial(n-2, *p) + factorial(n-1, *p);
+    if (n == 1) return;
+    else {
+        *p *= n;
+        factorial(n-1, p);    
     }
 }
 
 int main(){
 
-    int n, ans;
-    printf("n번째 팩토리얼 값을 계산해보자. 자연수 n을 입력해주세요.\n");
+    int n, ans = 1;
+    int *ptr = &ans;
+    printf("n!을 계산해보자.\n");
     scanf("%d", &n);
 
-    factorial(int n, &ans);
+    factorial(n, ptr);
 
-    printf("%d번째 팩토리얼 값은 %d다.\n", n, ans);
+    printf("%d! = %d다.\n", n, ans);
 
     return 0;
 }
