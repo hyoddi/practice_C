@@ -7,21 +7,21 @@
 
 #include <stdio.h>
 
-void swap(int *ptr1, int *ptr2){
-    int tmp1 = *ptr1;
-    int tmp2 = *ptr2;
-
-    *ptr1 = tmp2;
-    *ptr2 = tmp1;
+void swap(int *p, int *q){
+    int tmp;
+    tmp = *p;
+    *p = *q;
+    *q = tmp;
 }
 
 void insertion_sort(int a[], int length){
 
-    for (int i = 0; i < length; i++){
+    for (int i = 1; i < length; i++){
         
         for (int j = i; j > 0; j--){
 
-            if (a[j] < a[j-1]) swap(&a[i], &a[j]);
+            if (a[j] < a[j-1]) swap(&a[j-1], &a[j]);
+            
         }
     }
     
