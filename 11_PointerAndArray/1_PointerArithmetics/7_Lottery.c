@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <unistd.h>
+#include <unistd.h> // 리눅스 API
 
 
 void swap(int *, int *);
@@ -14,7 +14,6 @@ void set_numbers(int a[]);
 
 
 int main(){
-
 
     while(1){
         int input;
@@ -24,16 +23,24 @@ int main(){
         if (input == 0) break;
 
         printf("Possible sets of lottery numbers are...\n");
-        for (int i = 0; i < input % 1000; i++){
-            int lottery[6], *j;
+        for (int i = 0; i < input / 1000; i++){
+            int lottery[MAX], *j;
             
             set_numbers(lottery);
 
-            for (j = lottery; j < &lottery[5]; j++)
-                printf("%d", j++);
+            for (j = lottery; j < &lottery[MAX - 1]; j++)
+                printf("%d", *(j++));
             printf("\n");            
         }
     }
 
     return 0;
+}
+
+void set_numbers(int a[]){
+    for (int i = 0; i < MAX; i++){
+        srand(time(NULL));
+        int tmp = 1 + rand() % 45;
+        
+    }
 }
